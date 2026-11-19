@@ -1,23 +1,21 @@
+import { Routes, Route } from 'react-router';
 import { Layout } from '../components/Layout';
-import { MensajeEstado } from '../components/MensajeEstado';
-import { Boton } from '../components/Boton';
+import { CatalogoPage } from '../features/inicio/CatalogoPage';
+import { GuiaPage } from '../features/guias/GuiaPage';
+import { PracticaPage } from '../features/practicas/PracticaPage';
+import { ResultadoPage } from '../features/practicas/ResultadoPage';
 
 export default function App() {
   return (
-    // Ya no usamos <main> aquí: lo pone Layout
+    // Layout queda fuera de Routes: el marco se mantiene y solo cambia el contenido
     <Layout>
-      <h1>Prueba de componentes</h1>
-
-      <MensajeEstado tipo="cargando" mensaje="Cargando las guías…" />
-
-      <MensajeEstado
-        tipo="error"
-        mensaje="No pudimos cargar las guías. Revisa tu conexión e inténtalo de nuevo."
-        textoAccion="Reintentar"
-        onAccion={() => console.log('Reintentando')}
-      />
-
-      <Boton variante="secundario">Anterior</Boton>
+      {/* Routes elige UNA ruta según la dirección actual */}
+      <Routes>
+        <Route path="/" element={<CatalogoPage />} />                          {/* Persona 1 */}
+        <Route path="/guias/:guiaId" element={<GuiaPage />} />                 {/* Persona 5 */}
+        <Route path="/guias/:guiaId/practica" element={<PracticaPage />} />    {/* Persona 3 */}
+        <Route path="/guias/:guiaId/resultado" element={<ResultadoPage />} />  {/* Persona 3 */}
+      </Routes>
     </Layout>
   );
 }
