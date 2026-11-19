@@ -1,0 +1,18 @@
+.mensaje-estado {
+  display: flex;                         /* acomoda los hijos en una línea flexible */
+  flex-direction: column;                /* ...pero uno debajo del otro */
+  align-items: flex-start;               /* alineados a la izquierda, sin estirarse */
+  gap: var(--espacio-2);                 /* separación entre el texto y el botón */
+  padding: var(--espacio-3);
+  border: 2px solid var(--color-texto-suave);
+  border-radius: var(--radio);
+}
+
+/* El error se distingue con un borde rojo; el texto sigue oscuro para leerse bien */
+.mensaje-estado--error {
+  border-color: var(--color-error);
+}
+
+.mensaje-estado__texto {
+  margin: 0;                             /* quita el espacio extra que trae <p> */
+}

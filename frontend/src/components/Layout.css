@@ -1,0 +1,34 @@
+/* Franja azul de lado a lado */
+.layout__encabezado {
+  background-color: var(--color-primario);
+  color: var(--color-fondo);
+  padding-block: var(--espacio-2);      /* relleno arriba y abajo */
+}
+
+/* Nombre de la app, alineado con el contenido */
+.layout__marca {
+  margin: 0 auto;                       /* auto a los lados = centrado */
+  max-width: 40rem;                     /* ancho máximo cómodo para leer */
+  padding-inline: var(--espacio-2);     /* relleno a izquierda y derecha */
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+/* Área de contenido: mobile-first.
+   Estos valores son para celular y valen para todas las pantallas */
+.layout__contenido {
+
+  display: flex;
+  flex-direction: column;               /* elementos uno debajo del otro */
+  gap: var(--espacio-3);                /* separación entre ellos */
+  max-width: 40rem;
+  margin: 0 auto;
+  padding: var(--espacio-3) var(--espacio-2);
+}
+
+/* Media query: solo se aplica si la pantalla mide 48rem o más (tablet o computador) */
+@media (min-width: 48rem) {
+  .layout__contenido {
+    padding-block: var(--espacio-4);    /* más aire arriba y abajo en pantallas grandes */
+  }
+}
