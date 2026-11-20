@@ -1,283 +1,298 @@
 [
   {
     "id": 1,
-    "titulo": "Uso básico del celular",
-    "descripcion": "Aprende a utilizar funciones esenciales del celular, como la pantalla táctil, las llamadas y la carga de la batería.",
+    "titulo": "Conectarse a Wi-Fi",
+    "descripcion": "Repasar la conexión a una red.",
     "pasos": [
       {
-        "id": 1,
+        "id": 11,
         "orden": 1,
-        "texto": "Identifica la pantalla táctil del celular. Esta pantalla permite interactuar con el dispositivo tocando sus opciones con los dedos."
+        "texto": "Abre los Ajustes del celular. Suelen tener un ícono con forma de engranaje.",
+        "imagen_url": null
       },
       {
-        "id": 2,
+        "id": 12,
         "orden": 2,
-        "texto": "Para seleccionar una aplicación o una opción, toca suavemente el elemento que aparece en la pantalla."
+        "texto": "Toca la opción Wi-Fi. En algunos celulares está dentro de Conexiones o Redes.",
+        "imagen_url": null
       },
       {
-        "id": 3,
+        "id": 13,
         "orden": 3,
-        "texto": "Para llamar a un familiar, busca y abre la aplicación Teléfono o Llamadas."
+        "texto": "Si el Wi-Fi está apagado, actívalo y espera a que aparezca la lista de redes.",
+        "imagen_url": null
       },
       {
-        "id": 4,
+        "id": 14,
         "orden": 4,
-        "texto": "Selecciona un contacto de tu lista o marca el número de teléfono al que deseas llamar."
+        "texto": "Toca la red que te indicó el facilitador y escribe su contraseña con calma.",
+        "imagen_url": null
       },
       {
-        "id": 5,
+        "id": 15,
         "orden": 5,
-        "texto": "Cuando la batería esté baja, conecta el celular a su cargador compatible y verifica que aparezca el símbolo de carga."
+        "texto": "Comprueba la conexión: verás el símbolo del Wi-Fi en la parte de arriba de la pantalla.",
+        "imagen_url": null
       }
     ],
     "preguntas": [
       {
-        "id": 1,
-        "enunciado": "¿Para qué sirve la pantalla táctil de un celular?",
+        "id": 101,
+        "enunciado": "¿Qué red debes elegir en el taller?",
         "opciones": [
           {
-            "id": "A",
-            "texto": "Para interactuar con el teléfono usando los dedos."
+            "id": "a",
+            "texto": "La red que indicó el facilitador."
           },
           {
-            "id": "B",
-            "texto": "Para cargar la batería."
+            "id": "b",
+            "texto": "La primera red de la lista."
           },
           {
-            "id": "C",
-            "texto": "Para aumentar el volumen."
+            "id": "c",
+            "texto": "Cualquier red que no tenga contraseña."
           }
         ],
-        "opcion_correcta": "A",
-        "explicacion": "La pantalla táctil permite controlar el celular tocando elementos, botones y aplicaciones con los dedos."
+        "opcion_correcta": "a",
+        "explicacion": "Elige la red indicada para el taller. Una red desconocida puede no funcionar o no ser segura."
       },
       {
-        "id": 2,
-        "enunciado": "Si queremos llamar a un familiar, ¿qué debemos utilizar?",
+        "id": 102,
+        "enunciado": "Si no encuentras la opción Wi-Fi en los Ajustes, ¿qué puedes hacer?",
         "opciones": [
           {
-            "id": "A",
-            "texto": "La calculadora."
+            "id": "a",
+            "texto": "Apagar el celular."
           },
           {
-            "id": "B",
-            "texto": "La aplicación de llamadas."
+            "id": "b",
+            "texto": "Pedir ayuda al facilitador."
           },
           {
-            "id": "C",
-            "texto": "La cámara."
+            "id": "c",
+            "texto": "Borrar una aplicación."
           }
         ],
-        "opcion_correcta": "B",
-        "explicacion": "La aplicación de llamadas permite marcar números y comunicarse por teléfono con otras personas."
+        "opcion_correcta": "b",
+        "explicacion": "Solicita ayuda a la persona responsable. Los menús cambian de un celular a otro y es normal no encontrarlos a la primera."
       },
       {
-        "id": 3,
-        "enunciado": "¿Qué debemos hacer cuando la batería del celular está baja?",
+        "id": 103,
+        "enunciado": "¿Cómo compruebas que el celular ya tiene Internet?",
         "opciones": [
           {
-            "id": "A",
-            "texto": "Apagar la pantalla para siempre."
+            "id": "a",
+            "texto": "Miro si la pantalla está encendida."
           },
           {
-            "id": "B",
-            "texto": "Golpear el celular."
+            "id": "b",
+            "texto": "Abro una página o una aplicación que use Internet."
           },
           {
-            "id": "C",
-            "texto": "Conectarlo al cargador."
+            "id": "c",
+            "texto": "Reinicio el celular."
           }
         ],
-        "opcion_correcta": "C",
-        "explicacion": "Conectar el celular a un cargador compatible permite recuperar la energía de la batería."
+        "opcion_correcta": "b",
+        "explicacion": "Comprueba Internet abriendo una página. Si la página carga, la conexión funciona."
       }
     ]
   },
   {
     "id": 2,
-    "titulo": "Internet y comunicación",
-    "descripcion": "Conoce funciones básicas para navegar por internet, compartir fotografías y conectarte a una red Wi-Fi.",
+    "titulo": "Ajustar el tamaño del texto",
+    "descripcion": "Agrandar la letra del celular para leer con comodidad.",
     "pasos": [
       {
-        "id": 6,
+        "id": 21,
         "orden": 1,
-        "texto": "Busca en tu celular un navegador de internet, como Chrome, Safari u otro disponible."
+        "texto": "Abre los Ajustes del celular. Suelen tener un ícono con forma de engranaje.",
+        "imagen_url": null
       },
       {
-        "id": 7,
+        "id": 22,
         "orden": 2,
-        "texto": "Abre el navegador y escribe en la barra de direcciones el nombre de una página o el tema que deseas buscar."
+        "texto": "Busca la opción Pantalla. En algunos celulares se llama Accesibilidad.",
+        "imagen_url": null
       },
       {
-        "id": 8,
+        "id": 23,
         "orden": 3,
-        "texto": "Para enviar una fotografía por WhatsApp, abre la aplicación y entra al chat de la persona a quien deseas enviarla."
+        "texto": "Toca Tamaño de fuente o Tamaño del texto.",
+        "imagen_url": null
       },
       {
-        "id": 9,
+        "id": 24,
         "orden": 4,
-        "texto": "Dentro del chat, selecciona el botón para adjuntar archivos o fotografías, elige la imagen y revisa que sea la correcta."
+        "texto": "Mueve la barra hacia la derecha para agrandar la letra. Verás un ejemplo mientras la mueves.",
+        "imagen_url": null
       },
       {
-        "id": 10,
+        "id": 25,
         "orden": 5,
-        "texto": "Para conectarte a una red Wi-Fi protegida, abre los ajustes de Wi-Fi, selecciona la red autorizada e introduce su contraseña."
+        "texto": "Sal de los Ajustes y abre un mensaje para comprobar que lees con comodidad.",
+        "imagen_url": null
       }
     ],
     "preguntas": [
       {
-        "id": 4,
-        "enunciado": "¿Para qué sirve un navegador de internet?",
+        "id": 201,
+        "enunciado": "¿En qué parte del celular se cambia el tamaño del texto?",
         "opciones": [
           {
-            "id": "A",
-            "texto": "Para buscar y visitar páginas web."
+            "id": "a",
+            "texto": "En los Ajustes."
           },
           {
-            "id": "B",
-            "texto": "Para lavar el celular."
+            "id": "b",
+            "texto": "En la cámara."
           },
           {
-            "id": "C",
-            "texto": "Para tomar fotografías."
+            "id": "c",
+            "texto": "En la galería de fotos."
           }
         ],
-        "opcion_correcta": "A",
-        "explicacion": "Un navegador permite acceder a páginas web y consultar información disponible en internet."
+        "opcion_correcta": "a",
+        "explicacion": "El tamaño del texto se cambia en los Ajustes, dentro de Pantalla o Accesibilidad."
       },
       {
-        "id": 5,
-        "enunciado": "Si queremos enviar una foto por WhatsApp, ¿qué podemos hacer?",
+        "id": 202,
+        "enunciado": "Si mueves la barra del tamaño hacia la derecha, ¿qué pasa?",
         "opciones": [
           {
-            "id": "A",
-            "texto": "Encender la linterna."
+            "id": "a",
+            "texto": "La letra se hace más pequeña."
           },
           {
-            "id": "B",
-            "texto": "Entrar al chat y seleccionar la opción para adjuntar una foto."
+            "id": "b",
+            "texto": "La letra se hace más grande."
           },
           {
-            "id": "C",
-            "texto": "Abrir la calculadora."
+            "id": "c",
+            "texto": "El celular se apaga."
           }
         ],
-        "opcion_correcta": "B",
-        "explicacion": "La opción para adjuntar permite seleccionar una fotografía del celular y compartirla en la conversación."
+        "opcion_correcta": "b",
+        "explicacion": "Hacia la derecha la letra crece y hacia la izquierda se achica. Puedes probar hasta encontrar el tamaño cómodo."
       },
       {
-        "id": 6,
-        "enunciado": "¿Qué necesitamos normalmente para conectarnos a una red Wi-Fi protegida?",
+        "id": 203,
+        "enunciado": "¿Cambiar el tamaño del texto borra tus mensajes o tus fotos?",
         "opciones": [
           {
-            "id": "A",
-            "texto": "Una fotografía."
+            "id": "a",
+            "texto": "Sí, borra todo."
           },
           {
-            "id": "B",
-            "texto": "Un número de teléfono."
+            "id": "b",
+            "texto": "Solo borra las fotos."
           },
           {
-            "id": "C",
-            "texto": "La contraseña de la red."
+            "id": "c",
+            "texto": "No, solo cambia cómo se ve la letra."
           }
         ],
-        "opcion_correcta": "C",
-        "explicacion": "Una red Wi-Fi protegida solicita su contraseña para permitir el acceso a las personas autorizadas."
+        "opcion_correcta": "c",
+        "explicacion": "Es un ajuste de cómo se ve la pantalla: no borra nada y puedes cambiarlo de nuevo cuando quieras."
       }
     ]
   },
   {
     "id": 3,
-    "titulo": "Seguridad digital",
-    "descripcion": "Aprende a proteger tus datos personales, crear contraseñas seguras y reconocer enlaces sospechosos.",
+    "titulo": "Enviar un mensaje",
+    "descripcion": "Escribir y enviar un mensaje de texto a un contacto.",
     "pasos": [
       {
-        "id": 11,
+        "id": 31,
         "orden": 1,
-        "texto": "Desconfía de mensajes inesperados que soliciten contraseñas, códigos de verificación o información personal."
+        "texto": "Abre la aplicación de Mensajes. Suele tener el ícono de un globo de conversación.",
+        "imagen_url": null
       },
       {
-        "id": 12,
+        "id": 32,
         "orden": 2,
-        "texto": "Antes de responder un mensaje de un desconocido, verifica quién lo envía por un medio confiable."
+        "texto": "Toca el botón para escribir un mensaje nuevo. Puede decir Iniciar chat o tener un lápiz.",
+        "imagen_url": null
       },
       {
-        "id": 13,
+        "id": 33,
         "orden": 3,
-        "texto": "No compartas tus contraseñas ni códigos de acceso con otras personas."
+        "texto": "Escribe el nombre de la persona o elígela de tu lista de contactos.",
+        "imagen_url": null
       },
       {
-        "id": 14,
+        "id": 34,
         "orden": 4,
-        "texto": "Crea contraseñas difíciles de adivinar, combinando diferentes tipos de caracteres y evitando datos personales evidentes."
+        "texto": "Toca el espacio de texto y escribe tu mensaje. Revísalo antes de enviarlo.",
+        "imagen_url": null
       },
       {
-        "id": 15,
+        "id": 35,
         "orden": 5,
-        "texto": "Si recibes un enlace sospechoso, no lo abras. Verifica su procedencia con la entidad o persona por un canal oficial."
+        "texto": "Toca el botón Enviar, que suele tener forma de flecha. El mensaje aparecerá en la conversación.",
+        "imagen_url": null
       }
     ],
     "preguntas": [
       {
-        "id": 7,
-        "enunciado": "Si recibimos un mensaje de un desconocido que pide nuestra contraseña, ¿qué debemos hacer?",
+        "id": 301,
+        "enunciado": "¿Qué debes elegir antes de escribir el mensaje?",
         "opciones": [
           {
-            "id": "A",
-            "texto": "Compartirla inmediatamente."
+            "id": "a",
+            "texto": "La persona que lo va a recibir."
           },
           {
-            "id": "B",
-            "texto": "No compartirla y verificar quién envía el mensaje."
+            "id": "b",
+            "texto": "El fondo de pantalla."
           },
           {
-            "id": "C",
-            "texto": "Publicarla en redes sociales."
+            "id": "c",
+            "texto": "El volumen del celular."
           }
         ],
-        "opcion_correcta": "B",
-        "explicacion": "Las contraseñas son privadas. No deben compartirse y es importante verificar la identidad de quien solicita información."
+        "opcion_correcta": "a",
+        "explicacion": "Primero se elige a quién va el mensaje; así no se envía a otra persona por error."
       },
       {
-        "id": 8,
-        "enunciado": "¿Cómo podemos crear una contraseña más segura?",
+        "id": 302,
+        "enunciado": "¿Qué conviene hacer antes de tocar Enviar?",
         "opciones": [
           {
-            "id": "A",
-            "texto": "Usando una combinación difícil de adivinar."
+            "id": "a",
+            "texto": "Apagar la pantalla."
           },
           {
-            "id": "B",
-            "texto": "Utilizando solamente nuestro nombre."
+            "id": "b",
+            "texto": "Revisar lo que escribiste."
           },
           {
-            "id": "C",
-            "texto": "Escribiendo 123456."
+            "id": "c",
+            "texto": "Cerrar la aplicación."
           }
         ],
-        "opcion_correcta": "A",
-        "explicacion": "Una contraseña segura debe ser difícil de adivinar y no utilizar datos personales evidentes ni secuencias comunes."
+        "opcion_correcta": "b",
+        "explicacion": "Revisar el mensaje ayuda a corregir errores, porque después de enviarlo la otra persona ya lo recibe."
       },
       {
-        "id": 9,
-        "enunciado": "Si recibimos un enlace sospechoso, ¿qué es lo más recomendable?",
+        "id": 303,
+        "enunciado": "¿Cómo sabes que el mensaje se envió?",
         "opciones": [
           {
-            "id": "A",
-            "texto": "Abrirlo rápidamente."
+            "id": "a",
+            "texto": "El celular se reinicia."
           },
           {
-            "id": "B",
-            "texto": "Enviarlo a todos nuestros contactos."
+            "id": "b",
+            "texto": "La aplicación se cierra sola."
           },
           {
-            "id": "C",
-            "texto": "No abrirlo y verificar su procedencia."
+            "id": "c",
+            "texto": "El mensaje aparece en la conversación."
           }
         ],
-        "opcion_correcta": "C",
-        "explicacion": "Un enlace sospechoso puede dirigir a páginas falsas o peligrosas. Es mejor no abrirlo y comprobar su origen."
+        "opcion_correcta": "c",
+        "explicacion": "Cuando el mensaje se envía, aparece en la conversación. Algunos celulares muestran además una marca de enviado."
       }
     ]
   }

@@ -48,3 +48,29 @@ def fabrica_sesiones(motor):
 def db(fabrica_sesiones) -> Generator[Session, None, None]:
     with fabrica_sesiones() as sesion:
         yield sesion
+
+
+@pytest.fixture
+def datos_cargados(db):
+    """Carga backend/data/guias.json con el mismo cargador que se usa en PostgreSQL."""
+    from scripts.cargar_datos import cargar_datos, leer_guias
+
+    cargar_datos(db, leer_guias())
+    return db
+
+
+@pytest.fixture
+def cliente(fabrica_sesiones, datos_cargados):
+    from fastapi.testclient import TestClient
+
+    from app.db.database import obtener_sesion
+    from app.main import app
+
+    def _sesion_de_prueba():
+        with fabrica_sesiones() as sesion:
+            yield sesion
+
+    app.dependency_overrides[obtener_sesion] = _sesion_de_prueba
+    with TestClient(app, raise_server_exceptions=False) as cliente:
+        yield cliente
+    app.dependency_overrides.clear()

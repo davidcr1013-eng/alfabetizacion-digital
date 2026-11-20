@@ -9,6 +9,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from starlette.exceptions import HTTPException as StarletteHTTPException
 
+from app.api import guias
 from app.config import configuracion
 
 logger = logging.getLogger("alfabetizacion")
@@ -52,6 +53,9 @@ async def manejar_validacion(request: Request, _: RequestValidationError) -> JSO
 async def manejar_inesperado(_: Request, error: Exception) -> JSONResponse:
     logger.exception("Error no controlado", exc_info=error)
     return JSONResponse(status_code=500, content={"detail": MENSAJE_500})
+
+
+app.include_router(guias.router)
 
 
 @app.get("/health")
