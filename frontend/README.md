@@ -1,32 +1,41 @@
-# React + TypeScript + Vite
+# Frontend · Alfabetización Digital
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+Interfaz web en React + TypeScript + Vite.
 
-Currently, two official plugins are available:
+## Requisitos
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+- Node.js 22.22 o posterior (`node -v` para revisarlo).
 
-## React Compiler
+## Instalación
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Desde la raíz del repositorio:
 
-## Expanding the Oxlint configuration
+    cd frontend
+    npm install
 
-If you are developing a production application, we recommend enabling type-aware lint rules by installing `oxlint-tsgolint` and editing `.oxlintrc.json`:
+## Comandos
 
-```json
-{
-  "$schema": "./node_modules/oxlint/configuration_schema.json",
-  "plugins": ["react", "typescript", "oxc"],
-  "options": {
-    "typeAware": true
-  },
-  "rules": {
-    "react/rules-of-hooks": "error",
-    "react/only-export-components": ["warn", { "allowConstantExport": true }]
-  }
-}
-```
+| Comando | Para qué |
+| --- | --- |
+| `npm run dev` | Inicia el servidor de desarrollo en http://localhost:5173 |
+| `npm run build` | Revisa los tipos y genera la versión final en `dist/` |
+| `npm run test:run` | Ejecuta las pruebas una vez |
+| `npm test` | Ejecuta las pruebas en modo vigilancia |
 
-See the [Oxlint rules documentation](https://oxc.rs/docs/guide/usage/linter/rules) for the full list of rules and categories.
+## Rutas
+
+| Ruta | Pantalla | Responsable |
+| --- | --- | --- |
+| `/` | Catálogo | Persona 1 |
+| `/guias/:guiaId` | Guía | Persona 5 |
+| `/guias/:guiaId/practica` | Práctica | Persona 3 |
+| `/guias/:guiaId/resultado` | Resultado | Persona 3 |
+
+## Estructura
+
+- `src/app`: componente principal y enrutador.
+- `src/components`: componentes compartidos (`Boton`, `MensajeEstado`, `Layout`).
+- `src/features`: una carpeta por pantalla y responsable.
+- `src/styles`: estilos globales y tokens de diseño.
+
+La conexión con la API (`VITE_API_BASE_URL`) se configura en la tarea P1-03.
