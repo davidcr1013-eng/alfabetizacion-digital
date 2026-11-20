@@ -9,7 +9,7 @@ from fastapi.middleware.cors import CORSMiddleware
 from fastapi.responses import JSONResponse
 from starlette.exceptions import HTTPException as StarletteHTTPException
 
-from app.api import guias
+from app.api import guias, practicas
 from app.config import configuracion
 
 logger = logging.getLogger("alfabetizacion")
@@ -56,6 +56,7 @@ async def manejar_inesperado(_: Request, error: Exception) -> JSONResponse:
 
 
 app.include_router(guias.router)
+app.include_router(practicas.router)
 
 
 @app.get("/health")
