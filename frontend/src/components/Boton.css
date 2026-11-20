@@ -26,3 +26,11 @@
   opacity: 0.5;               /* se ve apagado */
   cursor: not-allowed;        /* el cursor indica que no se puede usar */
 }
+/* EnlaceBoton: un enlace con la misma apariencia que el botón */
+.enlace-boton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+}

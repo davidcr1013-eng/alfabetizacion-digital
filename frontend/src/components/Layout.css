@@ -5,19 +5,42 @@
   padding-block: var(--espacio-2);      /* relleno arriba y abajo */
 }
 
-/* Nombre de la app, alineado con el contenido */
-.layout__marca {
-  margin: 0 auto;                       /* auto a los lados = centrado */
+/* Fila con el nombre de la app y el enlace Inicio, alineada con el contenido */
+.layout__barra {
+  display: flex;
+  flex-wrap: wrap;                      /* al ampliar al 200 % el enlace baja de línea */
+  align-items: center;
+  justify-content: space-between;
+  gap: var(--espacio-1) var(--espacio-2);
   max-width: 40rem;                     /* ancho máximo cómodo para leer */
+  margin: 0 auto;                       /* auto a los lados = centrado */
   padding-inline: var(--espacio-2);     /* relleno a izquierda y derecha */
+}
+
+.layout__marca {
+  margin: 0;
   font-size: 1.2rem;
   font-weight: 700;
+}
+
+/* Enlace Inicio: blanco sobre azul, con área de 48 px para tocarlo */
+.layout__inicio {
+  display: inline-flex;
+  align-items: center;
+  min-height: var(--control-min);
+  padding-inline: var(--espacio-1);
+  color: var(--color-fondo);
+  font-weight: 600;
+}
+
+/* Sobre el fondo azul, el contorno azul del foco no se vería: se usa blanco */
+.layout__encabezado :focus-visible {
+  outline-color: var(--color-fondo);
 }
 
 /* Área de contenido: mobile-first.
    Estos valores son para celular y valen para todas las pantallas */
 .layout__contenido {
-
   display: flex;
   flex-direction: column;               /* elementos uno debajo del otro */
   gap: var(--espacio-3);                /* separación entre ellos */

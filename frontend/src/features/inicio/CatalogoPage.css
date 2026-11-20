@@ -1,0 +1,28 @@
+/* Lista de tarjetas: una debajo de otra, sin viñetas */
+.catalogo__lista {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-3);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.tarjeta-guia {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-2);
+  padding: var(--espacio-3);
+  border: 2px solid var(--color-texto-suave);
+  border-radius: var(--radio);
+}
+
+.tarjeta-guia__titulo {
+  margin: 0;
+  font-size: 1.2rem;
+}
+
+.tarjeta-guia__descripcion {
+  margin: 0;
+  color: var(--color-texto-suave);
+}

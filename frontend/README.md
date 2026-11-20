@@ -12,6 +12,9 @@ Desde la raíz del repositorio:
 
     cd frontend
     npm install
+    Copy-Item .env.example .env
+
+En `.env`, `VITE_API_BASE_URL` es la dirección de la API (por defecto `http://localhost:8000`). Para trabajar sin la API, pon `VITE_USAR_MOCKS=true`: las pantallas usarán los datos de ejemplo de `src/mocks/datos.ts`, que respetan el contrato T0. Después de cambiar `.env`, reinicia `npm run dev`.
 
 ## Comandos
 
@@ -37,5 +40,17 @@ Desde la raíz del repositorio:
 - `src/components`: componentes compartidos (`Boton`, `MensajeEstado`, `Layout`).
 - `src/features`: una carpeta por pantalla y responsable.
 - `src/styles`: estilos globales y tokens de diseño.
+- `src/services`: cliente HTTP compartido (`api.ts`), tipos del contrato (`tipos.ts`) y peticiones por tema.
+- `src/mocks`: datos de ejemplo con la forma exacta del contrato T0.
 
-La conexión con la API (`VITE_API_BASE_URL`) se configura en la tarea P1-03.
+## Cómo pedir datos a la API
+
+Usa siempre el cliente compartido, nunca `fetch` directo:
+
+```ts
+import { pedirJson, ErrorApi } from '../../services/api';
+
+const datos = await pedirJson<RespuestaPreguntas>(`/api/guias/${guiaId}/preguntas`, { signal });
+```
+
+Si la API responde con error, `pedirJson` lanza un `ErrorApi` cuyo `message` es el `detail` de la API y cuyo `estado` es el código HTTP (`0` si no hubo conexión).
