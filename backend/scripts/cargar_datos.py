@@ -1,14 +1,20 @@
+"""Carga repetible de backend/data/guias.json en PostgreSQL.
+
+Crea o actualiza guías, pasos y preguntas sin duplicarlos y sin tocar la
+tabla de intentos. Se ejecuta desde la carpeta backend:
+
+    python -m scripts.cargar_datos
+"""
 from __future__ import annotations
 
 import json
 from pathlib import Path
 from typing import Any
 
+from sqlalchemy import select
 from sqlalchemy.orm import Session
 
-# Ajusta estos imports según la estructura exacta de tu paquete en backend/app
 from app.db.models import Guia, Paso, Pregunta
-from app.db.database import SessionLocal
 
 RUTA_JSON_POR_DEFECTO = Path(__file__).resolve().parent.parent / "data" / "guias.json"
 
@@ -78,11 +84,9 @@ def _upsert_pasos(db: Session, guia_id: int, pasos_data: list[dict[str, Any]]) -
         paso = db.get(Paso, paso_id)
         if paso is None:
             # Si existiera un paso distinto con el mismo (guia_id, orden), lo reutilizamos/actualizamos
-            paso = (
-                db.query(Paso)
-                .filter(Paso.guia_id == guia_id, Paso.orden == orden)
-                .one_or_none()
-            )
+            paso = db.scalars(
+                select(Paso).where(Paso.guia_id == guia_id, Paso.orden == orden)
+            ).one_or_none()
 
         texto = str(paso_data["texto"]).strip()
         imagen_url = paso_data.get("imagen_url")
@@ -140,7 +144,7 @@ def _upsert_preguntas(
             pregunta.explicacion = explicacion
 
 
-def cargar_datos(ruta_json: Path = RUTA_JSON_POR_DEFECTO) -> None:
+def leer_guias(ruta_json: Path = RUTA_JSON_POR_DEFECTO) -> list[dict[str, Any]]:
     if not ruta_json.exists():
         raise FileNotFoundError(f"No se encontró el archivo de datos: {ruta_json}")
 
@@ -149,23 +153,31 @@ def cargar_datos(ruta_json: Path = RUTA_JSON_POR_DEFECTO) -> None:
 
     if not isinstance(contenido, list):
         raise ValueError("El archivo guias.json debe contener una lista de guías.")
+    return contenido
 
-    db: Session = SessionLocal()
+
+def cargar_datos(db: Session, guias: list[dict[str, Any]]) -> None:
+    """Inserta o actualiza las guías en una sola transacción."""
     try:
-        for guia_data in contenido:
+        for guia_data in guias:
             _validar_estructura_guia(guia_data)
             guia = _upsert_guia(db, guia_data)
             _upsert_pasos(db, guia.id, guia_data.get("pasos", []))
             _upsert_preguntas(db, guia.id, guia_data.get("preguntas", []))
-
         db.commit()
-        print(f"Carga completada correctamente desde: {ruta_json}")
     except Exception:
         db.rollback()
         raise
-    finally:
-        db.close()
+
+
+def main() -> None:
+    from app.db.database import SessionLocal
+
+    guias = leer_guias()
+    with SessionLocal() as db:
+        cargar_datos(db, guias)
+    print(f"Carga completada: {len(guias)} guías desde {RUTA_JSON_POR_DEFECTO}")
 
 
 if __name__ == "__main__":
-    cargar_datos()
+    main()
