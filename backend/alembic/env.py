@@ -19,7 +19,13 @@ if config.config_file_name is not None:
 # from myapp import mymodel
 # target_metadata = mymodel.Base.metadata
 
-from Backend.app.db.models import Base
+from app.config import configuracion
+from app.db.models import Base
+
+# La URL sale de DATABASE_URL (backend/.env), no de alembic.ini.
+if configuracion.database_url:
+    # Se duplica % porque alembic.ini interpreta ese símbolo como variable.
+    config.set_main_option("sqlalchemy.url", configuracion.database_url.replace("%", "%%"))
 
 target_metadata = Base.metadata
 

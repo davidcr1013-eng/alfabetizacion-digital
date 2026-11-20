@@ -1,8 +1,29 @@
-venv/
-node_modules/
+# ===== Credenciales y configuración local =====
+# Cada integrante crea su propio .env a partir de .env.example.
 .env
+.env.*
+!.env.example
+
+# ===== Python =====
 __pycache__/
-*.pyc
+*.py[cod]
+.venv/
+venv/
+env/
+.pytest_cache/
+*.egg-info/
+
+# ===== Node / frontend =====
+node_modules/
 dist/
 build/
+*.tsbuildinfo
+coverage/
 
+# ===== Editores y sistema operativo =====
+.vscode/*
+!.vscode/extensions.json
+.idea/
+.DS_Store
+Thumbs.db
+desktop.ini
