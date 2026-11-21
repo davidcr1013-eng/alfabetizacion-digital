@@ -1,0 +1,109 @@
+/* ===== Práctica ===== */
+.practica {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-3);
+}
+
+.practica__pregunta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-1);
+  margin: 0;
+  padding: var(--espacio-3);
+  border: 2px solid var(--color-texto-suave);
+  border-radius: var(--radio);
+}
+
+.practica__enunciado {
+  padding: 0 var(--espacio-1);
+  font-weight: 700;
+}
+
+/* Toda la fila (círculo y texto) se puede tocar, con 48 px de alto mínimo */
+.practica__opcion {
+  display: flex;
+  align-items: center;
+  gap: var(--espacio-2);
+  min-height: var(--control-min);
+  padding: var(--espacio-1) var(--espacio-2);
+  border: 2px solid transparent;
+  border-radius: var(--radio);
+  cursor: pointer;
+}
+
+.practica__opcion:has(input:checked) {
+  border-color: var(--color-primario);
+  background-color: color-mix(in srgb, var(--color-primario) 8%, var(--color-fondo));
+}
+
+.practica__opcion input {
+  flex-shrink: 0;
+  width: 1.5rem;
+  height: 1.5rem;
+  margin: 0;
+  accent-color: var(--color-primario);
+}
+
+.practica__avance {
+  margin: 0;
+  color: var(--color-texto-suave);
+}
+
+/* ===== Resultado ===== */
+.resultado__resumen {
+  margin: 0;
+  padding: var(--espacio-3);
+  border: 2px solid var(--color-primario);
+  border-radius: var(--radio);
+  font-size: 1.2rem;
+  text-align: center;
+}
+
+.resultado__resumen strong {
+  display: block;
+  font-size: 2rem;
+  color: var(--color-primario);
+}
+
+.resultado__lista {
+  display: flex;
+  flex-direction: column;
+  gap: var(--espacio-2);
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.resultado__item {
+  padding: var(--espacio-2) var(--espacio-3);
+  border: 2px solid;
+  border-left-width: 0.5rem;
+  border-radius: var(--radio);
+}
+
+.resultado__item--bien {
+  border-color: var(--color-exito);
+}
+
+.resultado__item--mal {
+  border-color: var(--color-error);
+}
+
+.resultado__item p {
+  margin: 0 0 var(--espacio-1);
+}
+
+.resultado__enunciado {
+  font-weight: 700;
+}
+
+.resultado__item--bien .resultado__veredicto {
+  color: var(--color-exito);
+  font-weight: 700;
+}
+
+.resultado__item--mal .resultado__veredicto {
+  color: var(--color-error);
+  font-weight: 700;
+}
