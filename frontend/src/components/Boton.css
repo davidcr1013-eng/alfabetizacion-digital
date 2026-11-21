@@ -1,0 +1,36 @@
+/* Estilo común a todos los botones */
+.boton {
+  min-height: var(--control-min);          /* mínimo 48 px de alto (T0) */
+  min-width: var(--control-min);           /* mínimo 48 px de ancho (T0) */
+  padding: var(--espacio-1) var(--espacio-3); /* relleno: arriba/abajo y a los lados */
+  border: 2px solid var(--color-primario);
+  border-radius: var(--radio);
+  font-weight: 600;                        /* letra semi-negrita */
+  cursor: pointer;                         /* la manito al pasar el ratón */
+}
+
+/* Variante principal: fondo azul, letra blanca */
+.boton--primario {
+  background-color: var(--color-primario);
+  color: var(--color-fondo);
+}
+
+/* Variante secundaria: fondo blanco, letra y borde azules */
+.boton--secundario {
+  background-color: var(--color-fondo);
+  color: var(--color-primario);
+}
+
+/* Cuando está desactivado */
+.boton:disabled {
+  opacity: 0.5;               /* se ve apagado */
+  cursor: not-allowed;        /* el cursor indica que no se puede usar */
+}
+/* EnlaceBoton: un enlace con la misma apariencia que el botón */
+.enlace-boton {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  text-decoration: none;
+}

@@ -1,0 +1,65 @@
+/* ===== Tokens de diseño ===== */
+/* :root es la raíz de la página; las variables definidas aquí sirven en todo el sitio */
+:root {
+  /* Colores  */
+  --color-fondo: #ffffff;        /* fondo de la página */
+  --color-texto: #1a1a1a;        /* texto principal, casi negro */
+  --color-texto-suave: #4a4a4a;  /* textos secundarios, como descripciones */
+  --color-primario: #1d4ed8;     /* azul de botones y encabezado */
+  --color-exito: #15803d;        /* verde para "Correcta" */
+  --color-error: #b91c1c;        /* rojo para errores e "Incorrecta" */
+  --color-foco: #1d4ed8;         /* contorno que muestra dónde está el teclado */
+
+  /* Espacios: una escala fija para no inventar medidas en cada pantalla */
+  --espacio-1: 0.5rem;           /* pequeño */
+  --espacio-2: 1rem;             /* normal */
+  --espacio-3: 1.5rem;           /* grande */
+  --espacio-4: 2rem;             /* muy grande */
+
+  /* Tamaños de accesibilidad acordados en T0 */
+  --control-min: 48px;           /* alto y ancho mínimo de botones y enlaces */
+  --radio: 0.5rem;               /* esquinas redondeadas */
+}
+
+/* ===== Estilos base ===== */
+
+/* Hace que el ancho de una caja incluya su borde y relleno (evita sorpresas al medir) */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+/* 125 % del tamaño normal del navegador (16 px) = 20 px.
+   Usamos % y no 20px fijo para respetar si la persona agrandó la letra en su navegador */
+html {
+  font-size: 125%;
+}
+
+body {
+  margin: 0;                                /* quita el margen que pone el navegador */
+  font-family: system-ui, sans-serif;       /* la letra del sistema: clara y conocida */
+  line-height: 1.5;                         /* espacio entre líneas para leer mejor */
+  color: var(--color-texto);                /* var() usa el valor de una variable */
+  background-color: var(--color-fondo);
+}
+
+/* Las imágenes nunca se salen de la pantalla en celulares */
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+/* Los controles de formulario no heredan la letra por defecto; aquí se lo pedimos */
+button,
+input,
+select,
+textarea {
+  font: inherit;   /* "inherit" = usa la misma letra que el elemento que lo contiene */
+}
+
+/* Foco visible: aparece al navegar con la tecla Tab */
+:focus-visible {
+  outline: 3px solid var(--color-foco);     /* contorno grueso */
+  outline-offset: 3px;                      /* separado del elemento para que se note */
+}
