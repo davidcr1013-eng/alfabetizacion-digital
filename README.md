@@ -41,6 +41,23 @@ uvicorn app.main:app --reload --port 8000
 - `http://localhost:8000/docs` abre la documentación interactiva.
 - Pruebas: `pytest` (desde `backend`, con el entorno activado).
 
+### Comprobar que un intento quedó guardado (sustentación)
+
+1. Responde una práctica en la aplicación.
+2. Detén la API (`Ctrl + C`) y vuelve a iniciarla con `uvicorn app.main:app --reload --port 8000`.
+3. Consulta la base en `psql` o pgAdmin:
+
+```sql
+SELECT id, guia_id, aciertos, total, creado_en
+FROM intentos
+ORDER BY creado_en DESC
+LIMIT 5;
+```
+
+El intento debe seguir ahí después del reinicio. La tabla solo guarda puntaje y fecha, sin datos de la persona.
+
+> Si tu base se creó con la primera migración (`426062012cd5`), `alembic upgrade head` aplica `7c1f2a9d4b3e`, que reemplaza las tablas por la versión de T0. Después vuelve a ejecutar `python -m scripts.cargar_datos`.
+
 ### 2. Frontend (terminal 2)
 
 ```powershell
