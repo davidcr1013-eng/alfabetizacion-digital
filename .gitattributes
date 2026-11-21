@@ -1,0 +1,14 @@
+# Guarda los archivos de texto con saltos de línea LF en el repositorio,
+# sin importar si se trabaja en Windows, Mac o Linux.
+* text=auto eol=lf
+
+# Scripts de Windows con CRLF
+*.bat text eol=crlf
+*.ps1 text eol=crlf
+
+# Binarios
+*.png binary
+*.jpg binary
+*.jpeg binary
+*.webp binary
+*.ico binary
